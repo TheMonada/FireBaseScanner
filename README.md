@@ -31,13 +31,17 @@ git clone https://github.com/TheMonada/FireBaseScanner.git
 Once the script is downloaded, run the script with the required arguments. We can either provide the APK file as an input as shown below:
 ```
 python3 FirebaseMisconfig.py --path /home/shiv/TestAPK/test.apk
+```
 or
+```
 python3 FirebaseMisconfig.py -p /home/shiv/TestAPK/test.apk
 ```
 Or we can provide the comma sperated firebase project names as shown below:
 ```
 python3 FirebaseMisconfig.py --firebase project1,project2,project3
+```
 or
+```
 python3 FirebaseMisconfig.py -f project1,project2,project3
 ```
 
