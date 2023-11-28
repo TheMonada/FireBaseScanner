@@ -26,19 +26,19 @@ Firebase is one of the widely used data stores for mobile applications. In 2018,
 Say what the step will be
 
 ```
-git clone https://github.com/shivsahni/FireBaseScanner.git
+git clone https://github.com/TheMonada/FireBaseScanner.git
 ```
 Once the script is downloaded, run the script with the required arguments. We can either provide the APK file as an input as shown below:
 ```
-python FirebaseMisconfig.py --path /home/shiv/TestAPK/test.apk
+python3 FirebaseMisconfig.py --path /home/shiv/TestAPK/test.apk
 or
-python FirebaseMisconfig.py -p /home/shiv/TestAPK/test.apk
+python3 FirebaseMisconfig.py -p /home/shiv/TestAPK/test.apk
 ```
 Or we can provide the comma sperated firebase project names as shown below:
 ```
-python FirebaseMisconfig.py --firebase project1,project2,project3
+python3 FirebaseMisconfig.py --firebase project1,project2,project3
 or
-python FirebaseMisconfig.py -f project1,project2,project3
+python3 FirebaseMisconfig.py -f project1,project2,project3
 ```
 
 ## Authors
