@@ -3,7 +3,7 @@ import os
 import sys
 import ntpath
 import re
-import urllib
+import urllib.error, urllib.request
 import hashlib
 from datetime import datetime
 
@@ -81,7 +81,7 @@ def isValidPath(apkFilePath):
 def reverseEngineerApplication(apkFileName):
     global projectDir
     myPrint("Initiating APK Decompilation Process.", "INFO")
-    projectDir=rootDir+apkFileName+"_"+hashlib.md5(apkFileName.encode()).hexdigest()
+    projectDir=rootDir+apkFileName+"_"+hashlib.md5().hexdigest()
     if (os.path.exists(projectDir)==True):
         myPrint("The same APK is already decompiled. Skipping decompilation and proceeding with scanning application.", "INFO")
         return projectDir
@@ -125,7 +125,7 @@ def scanDarlingScan():
         url='https://'+str+'.firebaseio.com/.json'
         try:
             response = urllib.request.urlopen(url)
-        except urllib.HTTPError as err:
+        except urllib.error.HTTPError as err:
             if(err.code==401):
                 myPrint("Secure Firbase Instance Found: "+str, "SECURE")
                 continue
@@ -135,7 +135,7 @@ def scanDarlingScan():
             else:
                 myPrint("Unable to identify misconfiguration for: ", "OUTPUT_WS")
                 continue
-        except urllib.URLError as err:
+        except urllib.error.URLError as err:
             myPrint("Facing connectivity issues. Please Check the Network Connectivity and Try Again.", "ERROR")
             print()
             continue
