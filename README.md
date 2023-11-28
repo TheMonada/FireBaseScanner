@@ -1,3 +1,11 @@
+# Disclaimer
+This is a fork of the original repository by Shiv Sahni. The original repository can be found [here](https://github.com/shivsahni/FireBaseScanner). We have made some changes to the original repository to make it work with Python 3.6 and to make it work with the latest version of the [Firebase API](https://firebase.google.com/docs/reference/rest/database). We have also added some additional features to the script.
+
+Since the original repository is no longer maintained, we have decided to make our fork public. We have the intention of maintaining this repository for the foreseeable future to help people who are still using the original repository.
+
+Sincerely,
+TheMonada Team.
+
 # FireBase Scanner
 Firebase is one of the widely used data stores for mobile applications. In 2018, Appthority Mobile Threat Team (MTT) discovered a misconfiguration in Firebase instance also called HospitalGown vulnerability. The following are some of the key highlights taken from the [ research paper](https://cdn2.hubspot.net/hubfs/436053/Appthority%20Q2-2018%20MTR%20Unsecured%20Firebase%20Databases.pdf) published by Appthority Mobile Threat Team (MTT):
 
@@ -11,7 +19,7 @@ Firebase is one of the widely used data stores for mobile applications. In 2018,
 ## Getting Started
 
 ### Prerequisites
-* Support for Python 2.7
+* Support for Python 3.6 and above versions (2023-11-28)
 
 ### Installing
 
@@ -35,4 +43,10 @@ python FirebaseMisconfig.py -f project1,project2,project3
 
 ## Authors
 
+### Original Author
 * **Shiv Sahni** - [LinkedIn](https://www.linkedin.com/in/shivsahni/)
+
+### Fork Maintainer
+* **TheMonada Team** - [//]: # "[Website](https://themonada.com)"
+* **Jorge Machado** - [LinkedIn](https://www.linkedin.com/in/jorgemachadoottonelli/)
+* **Diego Franggi** - [LinkedIn](https://www.linkedin.com/in/diego-franggi-9a43ba140/)
