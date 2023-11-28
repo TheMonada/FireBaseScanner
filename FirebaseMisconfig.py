@@ -2,10 +2,10 @@
 import os
 import sys
 import ntpath
-import time
 import re
 import urllib
 import hashlib
+from datetime import datetime
 
 
 class bcolors:
@@ -33,26 +33,27 @@ apktoolPath="./Dependencies/apktool_2.3.4.jar"
 
 
 def myPrint(text, type):
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     if(type=="INFO"):
-        print(bcolors.INFO+text+bcolors.ENDC+"\n")
+        print(f"[{current_time}] {bcolors.INFO} {text}{bcolors.ENDC}\n")
         return
     if(type=="ERROR"):
-        print(bcolors.BGRED+bcolors.FGWHITE+bcolors.BOLD+text+bcolors.ENDC)
+        print(f"[{current_time}] {bcolors.BGRED+bcolors.FGWHITE+bcolors.BOLD} {text}{bcolors.ENDC}")
         return
     if(type=="MESSAGE"):
-        print(bcolors.TITLE+bcolors.BOLD+text+bcolors.ENDC+"\n")
+        print(f"[{current_time}] {bcolors.TITLE+bcolors.BOLD} {text}{bcolors.ENDC}\n")
         return
     if(type=="INSECURE_WS"):
-        print(bcolors.OKRED+bcolors.BOLD+text+bcolors.ENDC)
+        print(f"[{current_time}] {bcolors.OKRED+bcolors.BOLD} {text}{bcolors.ENDC}")
         return
     if(type=="OUTPUT"):
-        print(bcolors.OKBLUE+bcolors.BOLD+text+bcolors.ENDC+"\n")
+        print(f"[{current_time}] {bcolors.OKBLUE+bcolors.BOLD} {text}{bcolors.ENDC}\n")
         return
     if(type=="OUTPUT_WS"):
-        print(bcolors.OKBLUE+bcolors.BOLD+text+bcolors.ENDC)
+        print(f"[{current_time}] {bcolors.OKBLUE+bcolors.BOLD} {text}{bcolors.ENDC}")
         return
     if(type=="SECURE"):
-        print(bcolors.OKGREEN+bcolors.BOLD+text+bcolors.ENDC)
+        print(f"[{current_time}] {bcolors.OKGREEN+bcolors.BOLD} {text}{bcolors.ENDC}")
         return
 
 
@@ -86,7 +87,7 @@ def reverseEngineerApplication(apkFileName):
         return projectDir
     os.mkdir(projectDir)
     myPrint("Decompiling the APK file using APKtool.", "INFO")
-    result=os.system("java -jar "+apktoolPath+" d "+"--output "+'"'+projectDir+"/apktool/"+'"'+' "'+apkFilePath+'"'+'>/dev/null')
+    result=os.system("java -jar "+apktoolPath+" d "+"--output "+'"'+projectDir+"/apktool/"+'"'+' "'+apkFilePath+'"'+' >/dev/null 2>&1')
     if (result!=0):
         myPrint("Apktool failed with exit status "+str(result)+". Please Try Again.", "ERROR")
         print()
@@ -167,7 +168,10 @@ print(bcolors.INFO+"""
                 :::: ::    ::: :::  ::   :::   ::   ::   ::   ::   :: ::::  ::   :::"""+bcolors.OKRED+bcolors.BOLD+"""
 
                                 
-                                # Developed By Shiv Sahni - @shiv__sahni
+                                # Originally developed By Shiv Sahni - @shiv__sahni
+                                # New supporters: Jorge Machado - @MachadoOtto
+                                #                 Diego Franggi - @diale13
+                                # TheMonada / https://github.com/TheMonada
 """+bcolors.ENDC)
 
 if (len(sys.argv)<3):
