@@ -47,6 +47,6 @@ python FirebaseMisconfig.py -f project1,project2,project3
 * **Shiv Sahni** - [LinkedIn](https://www.linkedin.com/in/shivsahni/)
 
 ### Fork Maintainer
-* **TheMonada Team** - [//]: # "[Website](https://themonada.com)"
+* **TheMonada Team**
 * **Jorge Machado** - [LinkedIn](https://www.linkedin.com/in/jorgemachadoottonelli/)
 * **Diego Franggi** - [LinkedIn](https://www.linkedin.com/in/diego-franggi-9a43ba140/)
